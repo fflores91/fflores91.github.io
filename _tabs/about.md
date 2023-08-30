@@ -4,8 +4,8 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-- 👋 Hi, I’m Fernando
-- 👀 I’m interested in Technology, sports, History.
-- 🌱 I’m currently learning Python, JavaScript, Ruby.
-- 💞️ I’m looking to collaborate on any project.
-- 📫 How to reach me: <fflores91@gmail.com>
+- 👋 Hola, soy Fernando. Actualmente estoy viviendo en Valdivia y quiero ser un programador experto.
+- 👀 Estoy interesado en la tecnología, fútbol, videojuegos, libros.
+- 🌱 Actualmente estoy practicando mucho en Python, JavaScript, Ruby. Es la mejor forma de ser un PRO-gramador.
+- 💞️ Estoy buscando algún proyecto laboral a largo plazo, estoy abierto a nuevos desafíos personales.
+- 📫 Contáctame: <ffloresa91@gmail.com>
