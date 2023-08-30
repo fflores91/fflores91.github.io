@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Proyecto Shopify 🎉
+title: Proyecto Shopify 🎉🐇
 tags: [proyecto shopify, desarrollo web]
 ---
 
