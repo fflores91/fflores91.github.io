@@ -1,10 +1,14 @@
 ---
 layout: post
 title: Proyecto Shopify 🎉🐇
-tags: [proyecto shopify, desarrollo web]
+tags: [shopify, desarrollo web]
 ---
 
-## ¡Hola mundo! Aquí les presento mi primer proyecto de desarrollo web en Shopify para la tienda Petit Skincare, durante el proyecto realicé las siguientes labores 💻
+## ¡Hola mundo! Aquí les presento mi primer proyecto de desarrollo web en Shopify
+
+[Revisa aquí mi proyecto en Shopify](https://petitskincare.cl)
+
+Este es el primer proyecto de Diseño Web y de E-commerce que creé como Programador para la tienda Petit Skincare, durante el proyecto realicé las siguientes labores 💻
 
 * Diseñé y desarrollé una tienda virtual desde cero en Shopify, con enfoque en la usabilidad y la estética visual: <https://petitskincare.cl>
 * Realicé un inventario completo de productos, categorizando y organizando el catálogo para una experiencia de compra intuitiva.
