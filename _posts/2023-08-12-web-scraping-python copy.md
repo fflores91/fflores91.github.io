@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Revisa este script de web-scarping en Python 🐍 
+title: Revisa este script de web-scraping en Python 🐍 
 tags: [proyecto, archivos, Python]
 ---
 
