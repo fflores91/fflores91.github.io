@@ -21,7 +21,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby: [3.2, 3.1]
+        ruby: [3.2]
 
     steps:
       - name: Checkout
@@ -33,12 +33,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-          bundler-cache: true
+          bundler-cache: false
 
-      - name: Install logger and csv
+      - name: Install Bundler 2.6.2
         run: |
-          gem install logger
-          gem install csv
+          gem uninstall bundler -a -x || true
+          gem install bundler:2.6.2
+
+      - name: Install Dependencies
+        run: bundle _2.6.2_ install
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -48,4 +51,3 @@ jobs:
 
       - name: Test Site
         run: bash tools/test
-

@@ -9,7 +9,6 @@ on:
       - README.md
       - LICENSE
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -17,7 +16,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -32,28 +30,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2
-          bundler-cache: true
+          bundler-cache: false
 
       - name: Install Bundler 2.6.2
-        run: gem install bundler:2.6.2
-
-      - name: Install logger and csv
         run: |
-          gem install logger
-          gem install csv
+          gem uninstall bundler -a -x || true
+          gem install bundler:2.6.2
+
+      - name: Install Dependencies
+        run: |
+          bundle _2.6.2_ install --jobs 4 --retry 3
 
       - name: Build site
-        run: bundle _2.6.2_ exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: |
+          bundle _2.6.2_ exec jekyll build --destination "_site${{ steps.pages.outputs.base_path }}"
         env:
-          JEKYLL_ENV: "production"
+          JEKYLL_ENV: production
 
       - name: Test site
         run: |
