@@ -21,19 +21,24 @@ jobs:
 
     strategy:
       matrix:
-        ruby: [2.7, 3]
+        ruby: [3.2, 3.1]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # for posts's lastmod
+          fetch-depth: 0
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+
+      - name: Install logger and csv
+        run: |
+          gem install logger
+          gem install csv
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -43,3 +48,4 @@ jobs:
 
       - name: Test Site
         run: bash tools/test
+
