@@ -42,19 +42,22 @@ jobs:
           ruby-version: 3.2
           bundler-cache: true
 
+      - name: Install Bundler 2.6.2
+        run: gem install bundler:2.6.2
+
       - name: Install logger and csv
         run: |
           gem install logger
           gem install csv
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: bundle _2.6.2_ exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
 
       - name: Test site
         run: |
-          bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
+          bundle _2.6.2_ exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
