@@ -7,21 +7,15 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -30,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Ruby
@@ -40,11 +34,9 @@ jobs:
           bundler-cache: false
 
       - name: Update Bundler to 2.6.2
-        run: |
-          gem install bundler:2.6.2
-          bundle _2.6.2_ lock
+        run: gem install bundler:2.6.2
 
-      - name: Install Dependencies with Bundler 2.6.2
+      - name: Bundle Install with Bundler 2.6.2
         run: bundle _2.6.2_ install
 
       - name: Install logger and csv
