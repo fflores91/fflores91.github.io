@@ -39,6 +39,9 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
+      - name: Install Bundler 2.6.2
+        run: gem install bundler:2.6.2
+
       - name: Install logger and csv
         run: |
           gem install logger
@@ -49,7 +52,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle _2.6.2_ exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
@@ -66,4 +69,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
