@@ -37,10 +37,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
+          bundler-cache: false # Disable automatic bundler-cache to manually handle Bundler
 
       - name: Install Bundler 2.6.2
         run: gem install bundler:2.6.2
+
+      - name: Install Dependencies
+        run: bundle _2.6.2_ install
 
       - name: Install logger and csv
         run: |
