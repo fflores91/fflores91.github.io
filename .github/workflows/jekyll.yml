@@ -1,9 +1,8 @@
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+# separate terms of service, privacy policy, and support documentation.
 
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+# Workflow to build and deploy a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
 on:
@@ -31,13 +30,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: false
 
-      - name: Update Bundler to 2.6.2
+      - name: Install Bundler 2.6.2
         run: gem install bundler:2.6.2
 
-      - name: Bundle Install with Bundler 2.6.2
-        run: bundle _2.6.2_ install
+      - name: Install Dependencies
+        run: bundle _2.6.2_ install --jobs 4 --retry 3
 
       - name: Install logger and csv
         run: |
