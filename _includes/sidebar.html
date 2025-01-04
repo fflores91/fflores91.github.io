@@ -57,17 +57,10 @@
     {% endunless %}
 
     {% for entry in site.social.links %}
-      {% assign url = "" %}
-      {% assign link_types = "" %}
-
-      {% case entry.type %}
-        {% when 'github', 'linkedin' %}
-          {% assign url = entry.url %}
-        {% when 'email' %}
-          {% assign url = "mailto:" | append: site.social.email %}
-        {% else %}
-          {% assign url = entry.url %}
-      {% endcase %}
+      {% assign url = entry.url %}
+      {% if entry.type == 'email' %}
+        {% assign url = "mailto:" | append: site.social.email %}
+      {% endif %}
 
       {% if url %}
         <a href="{{ url }}" aria-label="{{ entry.type }}" target="_blank" rel="noopener noreferrer">
