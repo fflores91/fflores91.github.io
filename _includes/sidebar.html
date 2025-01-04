@@ -58,13 +58,15 @@
 
     {% for entry in site.social.links %}
       {% assign url = entry.url %}
+      {% assign icon = entry.icon %}
+
       {% if entry.type == 'email' %}
         {% assign url = "mailto:" | append: site.social.email %}
       {% endif %}
 
       {% if url %}
         <a href="{{ url }}" aria-label="{{ entry.type }}" target="_blank" rel="noopener noreferrer">
-          <i class="{{ entry.icon }}"></i>
+          <i class="{{ icon }}"></i>
         </a>
       {% endif %}
     {% endfor %}
