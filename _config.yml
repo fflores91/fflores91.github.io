@@ -35,17 +35,19 @@ twitter:
   username: # # change to your twitter username
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Fernando Flores
-  email: fflores91@gmail.com # change to your email address
+  email: fflores91@gmail.com
   links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/github # change to your twitter homepage
-    - https://github.com/fflores91 # change to your github homepage
-    # Uncomment below to add more social links
-    - https://www.facebook.com/fgfa1991
-    - https://www.linkedin.com/in/fgfa1991
+    - type: linkedin
+      url: https://www.linkedin.com/in/fgfa1991
+      icon: fab fa-linkedin
+    - type: github
+      url: https://github.com/fflores91
+      icon: fab fa-github
+    - type: email
+      icon: fas fa-envelope
+
+
 
 google_site_verification: # fill in to your verification string
 
