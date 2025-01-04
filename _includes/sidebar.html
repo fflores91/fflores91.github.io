@@ -1,3 +1,5 @@
+<!-- The Side Bar -->
+
 <div id="sidebar" class="d-flex flex-column align-items-end">
   <div class="profile-wrapper">
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
@@ -55,6 +57,9 @@
     {% endunless %}
 
     {% for entry in site.social.links %}
+      {% assign url = "" %}
+      {% assign link_types = "" %}
+
       {% case entry.type %}
         {% when 'github', 'linkedin' %}
           {% assign url = entry.url %}
